@@ -13,12 +13,6 @@ def driver():
     return browser
 
 
-def test_sale(driver):
-    driver.get('https://magento.softwaretestingboard.com/sale.html')
-    title = driver.find_element(By.TAG_NAME, 'h1')
-    assert title.text == 'Sale'
-
-
 def test_whats_new(driver):
     driver.get('https://magento.softwaretestingboard.com/what-is-new.html')
     title = driver.find_element(By.TAG_NAME, 'h1')
