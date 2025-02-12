@@ -14,7 +14,7 @@ class PythonOrgSearch(unittest.TestCase):
         options = Options()
         options.add_argument("--headless")  # Включаем headless режим
         options.add_argument("--no-sandbox")
-        self.driver = webdriver.Firefox(options=options)  # Передаем options драйверу
+        self.driver = webdriver.Chrome(options=options)  # Передаем options драйверу
 
     # Test case method. It should always start with test_
     def test_search_in_python_org(self):
