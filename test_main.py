@@ -16,4 +16,4 @@ def driver():
 def test_whats_new(driver):
     driver.get('https://magento.softwaretestingboard.com/what-is-new.html')
     title = driver.find_element(By.TAG_NAME, 'h1')
-    assert title.text == "What's Ne"
+    assert title.text == "What's N"
