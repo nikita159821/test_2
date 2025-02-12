@@ -3,7 +3,11 @@ FROM python
 # Установите необходимые утилиты, включая git
 RUN apt-get update && apt-get install -y git wget
 
-# Клонируйте репозиторий
+# Создайте директорию для проекта
+RUN mkdir /app
+WORKDIR /app
+
+# Клонируйте репозиторий в созданную директорию
 RUN git clone https://github.com/nikita159821/test_2 .
 
 # Установите зависимости
