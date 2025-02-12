@@ -1,10 +1,18 @@
-   FROM python:3.12
+FROM python:3.12
 
-   WORKDIR /app
-   RUN apt-get update && apt-get install -y git
+WORKDIR /app
 
-   RUN git clone https://github.com/nikita159821/test_2 .
-   RUN pip install -r requirements.txt
+# Устанавливаем git
+RUN apt-get update && apt-get install -y git
 
-   CMD ["pytest"]
+# Клонируем репозиторий
+RUN git clone https://github.com/nikita159821/test_2 .
 
+# Устанавливаем зависимости, включая pytest
+RUN pip install -r requirements.txt
+
+# Устанавливаем pytest глобально (если необходимо)
+RUN pip install pytest
+
+# Запускаем pytest
+CMD ["python", "-m", "pytest", "test.py"]
