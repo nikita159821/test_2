@@ -40,6 +40,7 @@ class PythonOrgSearch(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()  # Используем quit() вместо close()
 
+
 # execute the script
 if __name__ == "__main__":
     unittest.main()
