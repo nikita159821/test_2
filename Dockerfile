@@ -22,5 +22,8 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 # Создайте директорию для результатов
 RUN mkdir allure-results
 
-# Запустите тесты
+# Задайте команду для запуска тестов и сохранения результатов
 CMD ["pytest", "test_main.py", "--alluredir=allure-results"]
+
+# (При необходимости) Вы можете добавить команду для генерации отчета
+# CMD ["bash", "-c", "pytest test_main.py --alluredir=allure-results && allure generate allure-results -o allure-report"]
