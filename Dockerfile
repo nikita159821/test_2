@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y git
 # Клонируем репозиторий
 RUN git clone https://github.com/nikita159821/test_2 .
 
+RUN mkdir allure-results
+
 # Устанавливаем зависимости, включая pytest
 RUN pip install -r requirements.txt
 
@@ -17,8 +19,5 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 
 RUN apt-get update && apt-get install -y google-chrome-stable
 
-# Устанавливаем pytest глобально (если необходимо)
-RUN pip install pytest
-
 # Запускаем pytest
-CMD ["python", "-m", "pytest", "test.py"]
+CMD ["pytest", "test.py", "--alluredir=allure-results"]
