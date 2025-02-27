@@ -22,4 +22,4 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 COPY test_main.py .
 
 # Используем ENTRYPOINT для запуска тестов
-ENTRYPOINT ["pytest", "test_main.py", "--alluredir=allure-results"]
+CMD ["pytest", "test_main.py", "--alluredir=allure-results"]
