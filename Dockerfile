@@ -21,8 +21,5 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 # Копируем необходимые файлы для тестов
 COPY test_main.py .
 
-# Создаем каталог для результатов allure
-RUN mkdir allure-results
-
-# Запускаем тесты с pytest и сохраняем результаты allure
-CMD ["pytest", "test_main.py", "--alluredir=allure-results"]
+# Используем ENTRYPOINT для запуска тестов
+ENTRYPOINT ["pytest", "test_main.py", "--alluredir=allure-results"]
